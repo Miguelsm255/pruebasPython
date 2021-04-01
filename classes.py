@@ -23,10 +23,11 @@ class Coche():
     
     # propiedades o ESTADO_INICIAL
 
-    largoChasis = 250
-    anchoChasis = 120
-    ruedas = 4
-    enmarcha = False
+    def __init__():
+        largoChasis = 250
+        anchoChasis = 120
+        ruedas = 4
+        enmarcha = False
 
     # comportamientos o MÉTODOS
 
