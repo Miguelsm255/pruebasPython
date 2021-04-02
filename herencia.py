@@ -22,9 +22,11 @@ class Vehiculos():
             '\nAcelerando:', self.acelera, '\nFrenando:', self.frena)
         
 
-class VElectricos():
+class VElectricos(Vehiculos):
 
-    def __init__(self):
+    def __init__(self, marca, modelo):
+
+        super().__init__(marca, modelo)
         self.autonomia = 100
     
     def cargarEnergia(self):
@@ -45,16 +47,18 @@ class Furgoneta(Vehiculos):
 
 class Moto(Vehiculos):
 
-    hcaballito = ''
+    def __init__(self, marca, modelo):
+        super().__init__(marca, modelo)
+        self.__hcaballito = False
 
     def caballito(self):
-        self.hcaballito = 'Estoy haciendo el caballito'
-    
-        #AQUÍ HAY QUE INSERTAR LA FUNCION 'ESTADO' CON 'CABALLITO' 
-        #TODO: Crear funcion 'estado' con 'caballito'
+        self.__hcaballito = True
+
+    def estado(self):
+        print(super().estado(), '\nCaballito:', self.__hcaballito)   #FIXME: aparece 'none' entre caracteristicas y caballito
 
 
-class biciElectrica(Vehiculos,VElectricos):
+class biciElectrica(VElectricos):
     pass
 
 
@@ -65,4 +69,4 @@ miFurgoneta = Furgoneta('Renault', 'Kangoo')
 miFurgoneta.arrancar()
 miFurgoneta.carga(True)
 
-miBici = biciElectrica()
+miBici = biciElectrica('orbea', 'ob1500')
