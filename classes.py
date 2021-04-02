@@ -23,44 +23,65 @@ class Coche():
     
     # propiedades o ESTADO_INICIAL
 
-    def __init__():
-        largoChasis = 250
-        anchoChasis = 120
-        ruedas = 4
-        enmarcha = False
+    def __init__(self):
+
+        self.__largoChasis = 250
+        self.__anchoChasis = 120
+        self.__ruedas = 4
+        self.__enmarcha = False
 
     # comportamientos o MÉTODOS
 
     def arrancar(self,arrancamos):
-        self.enmarcha = arrancamos
+        self.__enmarcha = arrancamos
+        chequeo = self.__chequeoInterno()
 
-        if(self.enmarcha):
+        if(self.__enmarcha and chequeo):
             return 'El coche está en marcha'
 
         else:
-            return 'El coche está parado'
+            return 'El coche no está enmarhca'
 
 
     def estado(self):
 
-        print('El coche tiene', self.ruedas,'ruedas, un ancho de',self.anchoChasis, 'y un largo de',
-            self.largoChasis)
+        print('El coche tiene', self.__ruedas,'ruedas, un ancho de',self.__anchoChasis, 'y un largo de',
+            self.__largoChasis)
+    
+
+    def __chequeoInterno(self):
+    
+        print('Realizando chequeo interno...')
+
+        self.gasolina = 'ok'
+        self.aceite = 'ok'
+        self.puertas = 'cerradas'
+
+        if(self.gasolina == 'ok' and self.aceite == 'ok' and self.puertas == 'cerradas'):
+            print('Todo correcto.')
+            return True
+            
+        
+        else:
+            print('Algo ha ido mal en el chequeo.')
+            return False
+            
     
 
     
 
 # Crear Objetos (Instanciar una clase)
 
-miCoche = Coche()
+Mercedes = Coche()
 
-print(miCoche.arrancar(True))
-miCoche.estado()
+print(Mercedes.arrancar(True))
+Mercedes.estado()
 
-print('-------------A contunuación crearemos el segundo objeto------------')
+print('\n-------------A contunuación crearemos el segundo objeto------------\n')
 
-miCoche2 = Coche()
+Ferrari = Coche()
 
-print(miCoche2.arrancar(False))
-miCoche2.estado()
+print(Ferrari.arrancar(False))
+Ferrari.estado()
 
 
