@@ -55,7 +55,8 @@ class Moto(Vehiculos):
         self.__hcaballito = True
 
     def estado(self):
-        print(super().estado(), '\nCaballito:', self.__hcaballito)   #FIXME: aparece 'none' entre caracteristicas y caballito
+        super().estado()
+        print('Caballito:', self.__hcaballito)
 
 
 class biciElectrica(VElectricos):
