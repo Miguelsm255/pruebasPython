@@ -1,0 +1,2 @@
+from calculos.operadoresSimples import *
+
