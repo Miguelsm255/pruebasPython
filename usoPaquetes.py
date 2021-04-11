@@ -1,2 +1,2 @@
-from calculos.operadoresSimples import *
+from operadores.operadoresSimples import *
 
